@@ -10,11 +10,14 @@
 </head>
 
 <body>
-  <form id="searchForm">
-    <input type="text" name="" id="searchFormText" required minlength="2">
-    <input type="submit" value="Поиск">
-  </form>
-  <div id="reposWrapper"></div>
+  <div class="wrapper">
+    <form class="search-form" id="searchForm">
+      <input class="search-form__text" type="text" name="text" id="searchFormText" placeholder="Название репозитория"
+        required minlength="2">
+      <input class="search-form__submit" type="submit" value="Поиск">
+    </form>
+    <div class="repos-wrapper" id="reposWrapper"></div>
+  </div>
 </body>
 <script src="script.js"></script>
 

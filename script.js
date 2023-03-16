@@ -12,21 +12,22 @@ searchForm.addEventListener('submit', (e) => {
       if(response.ok) return response.json();
     })
     .then((data) => {
-      console.log(data);
       reposWrapper.innerHTML = ``;
       data.items.forEach((item) => {
         reposWrapper.insertAdjacentHTML('beforeend', `
-          <div>
-            <a href="${item.html_url}" target="_blank">${item.full_name}</a>
-            <span>${item.description}</span>
-            <span>Stars: ${item.stargazers_count}</span>
+          <div class="repo">
+            <div>
+              <a class="repo-link" href="${item.html_url}" target="_blank">${item.full_name}</a>
+            </div>
+            <span class="repo-description">${item.description}</span>
+            <span class="repo-stars">${item.stargazers_count} ☆</span>
           </div>
         `)
       })
 
       if(!data.items.length) {
         reposWrapper.innerHTML = `
-          <span>Ничего не найдено</span>
+          <span class="not-found">Ничего не найдено</span>
         `;
       }
     })
